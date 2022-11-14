@@ -14,7 +14,12 @@ module.exports = {
     extraFileExtensions: ['.vue'],
   },
   plugins: ['vue'],
-  extends: ['plugin:vue/vue3-essential', 'standard-with-typescript'],
+  extends: [
+    'plugin:vue/vue3-essential',
+    'standard-with-typescript',
+    '@vue/typescript/recommended',
+    '@vue/prettier',
+  ],
   overrides: [],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
