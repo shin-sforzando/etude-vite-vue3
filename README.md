@@ -55,6 +55,7 @@
 - Node.js
   - [Vite](https://ja.vitejs.dev)
   - Vue 3
+  - ESLint
 - [git-secret](https://git-secret.io)
 
 ## How to
