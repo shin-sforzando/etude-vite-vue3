@@ -286,5 +286,7 @@ yarn-error.log
 # End of https://www.toptal.com/developers/gitignore/api/osx,linux,windows,node,vuejs,visualstudiocode,data,yarn,storybookjs
 
 ### Project Specific ###
+
+## Git Secret ##
 .gitsecret/keys/random_seed
 !*.secret

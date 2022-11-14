@@ -28,16 +28,16 @@ jobs:
           version: 1.0
       - name: Install dependencies
         run: PLAYWRIGHT_BROWSERS_PATH=0 yarn install
-      - name: Install Playwright
-        run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
-      - name: Test using Jest
-        run: yarn test:jest
-      - name: Test using Playwright
-        run: PLAYWRIGHT_BROWSERS_PATH=0 yarn test:e2e
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: playwright-results
-          path: |
-            __tests__/e2e/test-results
-          retention-days: 7
+      # - name: Install Playwright
+      #   run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps
+      # - name: Test using Jest
+      #   run: yarn test:jest
+      # - name: Test using Playwright
+      #   run: PLAYWRIGHT_BROWSERS_PATH=0 yarn test:e2e
+      # - name: Upload test results
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: playwright-results
+      #     path: |
+      #       __tests__/e2e/test-results
+      #     retention-days: 7
