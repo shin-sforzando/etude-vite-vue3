@@ -10,7 +10,7 @@
 <!-- Screenshots -->
 
 | ![Screenshot 1](https://placehold.jp/32/3d4070/ffffff/720x480.png?text=Screenshot%201) | ![Screenshot 2](https://placehold.jp/32/703d40/ffffff/720x480.png?text=Screenshot%202) |
-|:--------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
+| :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
 |                                      Screenshot 1                                      |                                      Screenshot 2                                      |
 
 <!-- Synopsis -->
@@ -31,7 +31,7 @@
 - [x] Integrate with Slack: `/github subscribe shin-sforzando/etude-vite-vue3 reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
-----
+---
 
 <!-- TOC -->
 
@@ -55,6 +55,9 @@
 - Node.js
   - [Vite](https://ja.vitejs.dev)
   - Vue 3
+  - ESLint
+  - Stylelint
+  - Prettier
 - [git-secret](https://git-secret.io)
 
 ## How to
@@ -76,7 +79,7 @@ $ yarn run
 
 To reveal secret files, `yarn reveal`.
 
-To hide secret files,  `yarn hide`.
+To hide secret files, `yarn hide`.
 
 #### Environment Variables
 
