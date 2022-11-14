@@ -9,8 +9,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "eslint": "eslint --fix src/**/*.{ts,vue}",
-    "stylelint": "stylelint --fix **/*.{vue,scss,css}",
-    "prettier": "prettier --write --ignore-unknown **/*.{ts,vue,scss,css,html,json}"
+    "stylelint": "stylelint --fix **/*.{vue,css}",
+    "prettier": "prettier --write --ignore-unknown **/*.{ts,vue,css,html,json}"
   },
   "dependencies": {
     "vue": "^3.2.41"
