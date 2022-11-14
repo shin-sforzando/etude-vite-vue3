@@ -1,16 +1,169 @@
-# Vue 3 + TypeScript + Vite
+# etude-vite-vue3
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<!-- Badges -->
 
-## Recommended IDE Setup
+[![Last Commit](https://img.shields.io/github/last-commit/shin-sforzando/etude-vite-vue3)](https://github.com/shin-sforzando/etude-vite-vue3/graphs/commit-activity)
+[![CI](https://github.com/shin-sforzando/etude-vite-vue3/actions/workflows/ci.yml/badge.svg)](https://github.com/shin-sforzando/etude-vite-vue3/actions/workflows/ci.yml)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+<!-- Screenshots -->
 
-## Type Support For `.vue` Imports in TS
+| ![Screenshot 1](https://placehold.jp/32/3d4070/ffffff/720x480.png?text=Screenshot%201) | ![Screenshot 2](https://placehold.jp/32/703d40/ffffff/720x480.png?text=Screenshot%202) |
+|:--------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|
+|                                      Screenshot 1                                      |                                      Screenshot 2                                      |
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+<!-- Synopsis -->
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+**etude-vite-vue3** is a repository for studying Vite + Vue3.
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+## **Use this template**
+
+- [x] Replace the string `shin-sforzando` with the actual project owner
+- [x] Replace the string `etude-vite-vue3` with the actual project name
+- [x] Create an issue `#1` for assets
+- [x] `yarn install` to install dependencies
+- [x] Check the [repository secrets](https://github.com/shin-sforzando/etude-vite-vue3/settings/secrets/actions)
+  - [x] `git secret reveal` to reveal secrets
+  - [x] Set `CHROMATIC_PROJECT_TOKEN` for Chromatic
+- [ ] Prepare the deployment destination
+- [ ] Prepare [Chromatic](https://www.chromatic.com/) for Storybook
+- [x] Integrate with Slack: `/github subscribe shin-sforzando/etude-vite-vue3 reviews comments branches commits:*`
+- [ ] **Delete this section!**
+
+----
+
+<!-- TOC -->
+
+- [**Use this template**](#use-this-template)
+- [Prerequisites](#prerequisites)
+- [How to](#how-to)
+  - [Setup](#setup)
+    - [Reveal secrets](#reveal-secrets)
+    - [Environment Variables](#environment-variables)
+  - [Develop](#develop)
+  - [Test](#test)
+  - [Storybook](#storybook)
+  - [Document](#document)
+    - [CHANGELOG.md](#changelogmd)
+  - [Deploy](#deploy)
+- [Misc](#misc)
+  - [Notes](#notes)
+  - [LICENSE](#license)
+  - [Contributors](#contributors)
+
+## Prerequisites
+
+- Node.js
+  - Next.js
+    - [next-axiom](https://github.com/axiomhq/next-axiom) as **Logger**
+  - ESLint
+  - Prettier
+  - Stylelint
+  - Jest
+  - Playwright
+  - Storybook
+- Tailwind CSS v3+
+  - Tailwind UI
+- [git-secret](https://git-secret.io)
+
+## How to
+
+```shell
+$ yarn run
+<snip>
+   - build
+      next build
+   - build-storybook
+      build-storybook
+   - chromatic
+      npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
+   - dev
+      next dev
+   - hide
+      git secret hide
+   - lint
+      next lint --dir src
+   - lint:fix
+      yarn lint --fix
+   - prepare
+      husky install
+   - prettier
+      prettier --write './**/*.{js,jsx,ts,tsx,json}'
+   - reveal
+      git secret reveal
+   - start
+      next start
+   - storybook
+      start-storybook -p 6006
+   - stylelint
+      stylelint --fix './**/*.{css,scss,sass}'
+   - test
+      yarn test:jest && yarn test:e2e
+   - test:e2e
+      playwright test
+   - test:jest
+      jest --updateSnapshot
+   - test:watch
+      jest --watchAll
+```
+
+### Setup
+
+#### Reveal secrets
+
+To reveal secret files, `yarn reveal`.
+
+To hide secret files,  `yarn hide`.
+
+#### Environment Variables
+
+```.env
+NEXT_TELEMETRY_DISABLED=1
+NEXT_PUBLIC_AXIOM_INGEST_ENDPOINT=xxxxxxxxxxxxxxxx
+CHROMATIC_PROJECT_TOKEN=xxxxxxxxxxxxxxxx
+```
+
+### Develop
+
+`yarn dev` to start development server.
+
+### Test
+
+To test using Jest, `yarn test:jest`.
+
+To test using Playwright, `yarn test:e2e`.
+
+To test both, `yarn test`.
+
+### Storybook
+
+Every time you push to GitHub, it is automatically deployed to Chromatic.
+
+`yarn storybook` to open Storybook manually.
+
+### Document
+
+#### CHANGELOG.md
+
+To update CHANGELOG.md, `git cliff --unreleased --output CHANGELOG.md`.
+
+### Deploy
+
+Every time you push to GitHub, it is automatically deployed to Vercel.
+
+## Misc
+
+### Notes
+
+This repository is [Commitizen](https://commitizen.github.io/cz-cli/) friendly, following [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow).
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+
+### LICENSE
+
+This project is licensed under the MIT License, see the [LICENSE](./LICENSE) for details.
+
+### Contributors
+
+- [sforzando LLC. and Inc.](https://sforzando.co.jp/)
+  - [Shin'ichiro Suzuki](https://github.com/shin-sforzando)
