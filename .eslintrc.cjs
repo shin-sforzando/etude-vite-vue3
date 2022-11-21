@@ -17,6 +17,7 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-essential',
     'standard-with-typescript',
+    'plugin:storybook/recommended',
     '@vue/typescript/recommended',
     '@vue/prettier',
   ],
