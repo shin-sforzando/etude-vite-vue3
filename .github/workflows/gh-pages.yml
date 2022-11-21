@@ -13,8 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Deploy
-        uses: xRealNeon/VuePagesAction@1.0.1
+        uses: StruggleYang/VuePagesAction@2.0.0
         with:
-          username: 'shin-sforzando'
-          reponame: 'etude-vite-vue3'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          useyarn: true
