@@ -16,7 +16,7 @@
     "prettier": "prettier --write --ignore-unknown './**/*.{js,cjs,ts,vue,css,html,json}'",
     "storybook": "NODE_OPTIONS='--openssl-legacy-provider' start-storybook -p 6006",
     "build-storybook": "NODE_OPTIONS='--openssl-legacy-provider' build-storybook",
-    "chromatic": "npx chromatic --project-token=7a74a06ff773"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "vue": "^3.2.45"
