@@ -17,25 +17,10 @@
 
 **etude-vite-vue3** is a repository for studying Vite + Vue3.
 
-## **Use this template**
-
-- [x] Replace the string `shin-sforzando` with the actual project owner
-- [x] Replace the string `etude-vite-vue3` with the actual project name
-- [x] Create an issue `#1` for assets
-- [x] `yarn install` to install dependencies
-- [x] Check the [repository secrets](https://github.com/shin-sforzando/etude-vite-vue3/settings/secrets/actions)
-  - [x] `git secret reveal` to reveal secrets
-  - [x] Set `CHROMATIC_PROJECT_TOKEN` for Chromatic
-- [ ] Prepare the deployment destination
-- [x] Prepare [Chromatic](https://www.chromatic.com/) for Storybook
-- [x] Integrate with Slack: `/github subscribe shin-sforzando/etude-vite-vue3 reviews comments branches commits:*`
-- [ ] **Delete this section!**
-
 ---
 
 <!-- TOC -->
 
-- [**Use this template**](#use-this-template)
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Setup](#setup)
