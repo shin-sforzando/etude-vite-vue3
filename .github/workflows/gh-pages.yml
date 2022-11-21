@@ -1,0 +1,20 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Deploy
+        uses: xRealNeon/VuePagesAction@1.0.1
+        with:
+          username: 'shin-sforzando'
+          reponame: 'etude-vite-vue3'
+          token: ${{ secrets.GITHUB_TOKEN }}

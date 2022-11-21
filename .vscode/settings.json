@@ -1,5 +1,5 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "cSpell.words": ["chromaui", "stylelint", "vite"]
+  "cSpell.words": ["chromaui", "reponame", "stylelint", "vite"]
 }
