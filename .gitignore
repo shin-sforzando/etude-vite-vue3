@@ -290,3 +290,4 @@ yarn-error.log
 ## Git Secret ##
 .gitsecret/keys/random_seed
 !*.secret
+.envrc

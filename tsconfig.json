@@ -18,12 +18,12 @@
     }
   },
   "include": [
-    "src/**/*.ts",
+    ".eslintrc.cjs",
     "src/**/*.d.ts",
+    "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "vite.config.ts",
-    ".eslintrc.cjs"
+    "vite.config.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
