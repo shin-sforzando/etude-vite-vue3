@@ -27,7 +27,7 @@
   - [x] `git secret reveal` to reveal secrets
   - [x] Set `CHROMATIC_PROJECT_TOKEN` for Chromatic
 - [ ] Prepare the deployment destination
-- [ ] Prepare [Chromatic](https://www.chromatic.com/) for Storybook
+- [x] Prepare [Chromatic](https://www.chromatic.com/) for Storybook
 - [x] Integrate with Slack: `/github subscribe shin-sforzando/etude-vite-vue3 reviews comments branches commits:*`
 - [ ] **Delete this section!**
 
