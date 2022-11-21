@@ -58,6 +58,7 @@
   - ESLint
   - Stylelint
   - Prettier
+  - Storybook
 - [git-secret](https://git-secret.io)
 
 ## How to
