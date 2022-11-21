@@ -25,5 +25,6 @@
     "src/**/*.vue",
     "vite.config.ts"
   ],
+  "exclude": ["src/stories", "node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

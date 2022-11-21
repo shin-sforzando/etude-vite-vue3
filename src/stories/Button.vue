@@ -4,7 +4,7 @@
   </button>
 </template>
 
-<script lang="ts">
+<script>
   import './button.css'
   import { reactive, computed } from 'vue'
 

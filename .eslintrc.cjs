@@ -21,6 +21,12 @@ module.exports = {
     '@vue/typescript/recommended',
     '@vue/prettier',
   ],
+  ignorePatterns: [
+    'node_modules/',
+    'dist/',
+    'src/stories/*.vue',
+    'storybook-static/',
+  ],
   overrides: [],
   rules: {
     'comma-dangle': ['error', 'always-multiline'],

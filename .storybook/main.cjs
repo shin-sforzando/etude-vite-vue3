@@ -12,4 +12,8 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
+  async viteFinal(config) {
+    config.resolve.alias['@'] = `${__dirname}/../src`
+    return { ...config, build: { ...config.build, sourcemap: true } }
+  },
 }
