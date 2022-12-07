@@ -13,17 +13,23 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "test": "echo 'Not Implemented Yet'",
-    "eslint": "eslint --ignore-path .gitignore './**/*.{js,ts,vue}' --fix",
-    "stylelint": "stylelint './**/*.{css,scss,vue}' --fix",
-    "prettier": "prettier --ignore-unknown './**/*.{js,cjs,ts,vue,css,html,json}' --write ",
+    "lint:script": "eslint --ignore-path .gitignore './**/*.{js,ts,vue}' --fix",
+    "lint:style": "stylelint './**/*.{css,scss,vue}' --fix",
+    "format": "prettier --ignore-unknown './**/*.{js,cjs,ts,vue,css,html,json}' --write ",
     "storybook": "NODE_OPTIONS='--openssl-legacy-provider' start-storybook -p 6006",
     "build-storybook": "NODE_OPTIONS='--openssl-legacy-provider' build-storybook",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "lint-staged": {
-    "*.{js,ts,vue}": "eslint --fix",
-    "*.{css,scss,vue}": "stylelint --fix",
-    "*": "prettier --write --ignore-unknown"
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,vue}": [
+      "stylelint --fix"
+    ],
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
   },
   "dependencies": {
     "vue": "^3.2.45"

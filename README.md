@@ -67,11 +67,11 @@ available via `npm run-script`:
     vue-tsc && vite build
   preview
     vite preview --host 0.0.0.0
-  eslint
+  lint:script
     eslint --ignore-path .gitignore './**/*.{js,ts,vue}' --fix
-  stylelint
+  lint:style
     stylelint './**/*.{css,scss,vue}' --fix
-  prettier
+  format
     prettier --ignore-unknown './**/*.{js,cjs,ts,vue,css,html,json}' --write
   storybook
     NODE_OPTIONS='--openssl-legacy-provider' start-storybook -p 6006
