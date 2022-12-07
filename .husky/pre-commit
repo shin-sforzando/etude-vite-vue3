@@ -2,5 +2,5 @@
 
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn hide
-yarn lint-staged
+npm run hide
+npx lint-staged

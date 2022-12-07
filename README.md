@@ -49,23 +49,45 @@
 ## How to
 
 ```shell
-$ yarn run
-<snip>
-   - build
-      vue-tsc && vite build
-   - dev
-      vite
-   - preview
-      vite preview
+$ npm run
+Lifecycle scripts included in etude-vite-vue3@0.0.0:
+  test
+    echo 'Not Implemented Yet'
+
+available via `npm run-script`:
+  prepare
+    husky install
+  hide
+    git secret hide -vm
+  reveal
+    git secret reveal -vf
+  dev
+    vite --host 0.0.0.0
+  build
+    vue-tsc && vite build
+  preview
+    vite preview --host 0.0.0.0
+  eslint
+    eslint --ignore-path .gitignore './**/*.{js,ts,vue}' --fix
+  stylelint
+    stylelint './**/*.{css,scss,vue}' --fix
+  prettier
+    prettier --ignore-unknown './**/*.{js,cjs,ts,vue,css,html,json}' --write
+  storybook
+    NODE_OPTIONS='--openssl-legacy-provider' start-storybook -p 6006
+  build-storybook
+    NODE_OPTIONS='--openssl-legacy-provider' build-storybook
+  chromatic
+    npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN
 ```
 
 ### Setup
 
 #### Reveal secrets
 
-To reveal secret files, `yarn reveal`.
+To reveal secret files, `npm run reveal`.
 
-To hide secret files, `yarn hide`.
+To hide secret files, `npm run hide`.
 
 #### Environment Variables
 
@@ -75,7 +97,7 @@ To hide secret files, `yarn hide`.
 
 ### Develop
 
-`yarn dev` to start development server.
+`npm run dev` to start development server.
 
 ### Document
 
