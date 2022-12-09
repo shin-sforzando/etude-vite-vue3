@@ -1,18 +1,35 @@
 <script setup lang="ts">
-  import OneSection from '@/components/OneSection.vue'
+  import { ref } from 'vue'
+
+  import MyInput from '@/components/MyInput.vue'
+  import MyRadio from '@/components/MyRadio.vue'
+  import MySelect from '@/components/MySelect.vue'
+
+  const currentComponent = ref(MyInput)
+  const componentsList = [
+    { name: 'MyInput', component: MyInput },
+    { name: 'MyRadio', component: MyRadio },
+    { name: 'MySelect', component: MySelect },
+  ]
+  const currentComponentName = ref('MyInput')
+  const componentsNameList: string[] = ['MyInput', 'MyRadio', 'MySelect']
+
+  let currentComponentIndex = 0
+
+  const switchComponent = (): void => {
+    currentComponentIndex++
+    if (componentsList.length <= currentComponentIndex) {
+      currentComponentIndex = 0
+    }
+    currentComponent.value = componentsList[currentComponentIndex].component
+    currentComponentName.value = componentsList[currentComponentIndex].name
+  }
 </script>
 
 <template>
-  <section>
-    <OneSection>
-      <template v-slot="{ memberInfo }">
-        <dl>
-          <dt>Name</dt>
-          <dd>{{ memberInfo.name }}</dd>
-          <dt>Status</dt>
-          <dd>{{ memberInfo.status }}</dd>
-        </dl>
-      </template>
-    </OneSection>
-  </section>
+  <p>Current Component: {{ currentComponentName }}</p>
+  <KeepAlive>
+    <component :is="currentComponent" />
+  </KeepAlive>
+  <button @click="switchComponent">切り替え</button>
 </template>
