@@ -1,45 +1,26 @@
 <script setup lang="ts">
-  import { computed } from 'vue'
+  import { Member } from '@/interfaces'
+  import { computed, inject } from 'vue'
 
-  export interface Member {
-    id: number
-    name: string
-    email: string
-    points: number
-    note?: string
-  }
-  const props = defineProps<Member>()
-
-  const emits = defineEmits<{
-    (event: 'update:points', points: number): void
-  }>()
+  const props = defineProps<{ id: number }>()
+  const memberList = inject('memberList') as Map<number, Member>
+  const member = computed((): Member => memberList.get(props.id) as Member)
 
   const localNote = computed((): string => {
-    let localNote = props.note
-    if (!localNote) {
-      localNote = '---'
-    }
-    return localNote
+    return member.value.note || '---'
   })
-  const onInput = (event: Event): void => {
-    const target = event.target as HTMLInputElement
-    const value = target.value
-    emits('update:points', Number(value))
-  }
 </script>
 
 <template>
   <section class="box">
-    <h4>{{ name }}</h4>
+    <h4>{{ member.name }}</h4>
     <dl>
       <dt>ID</dt>
-      <dd>{{ id }}</dd>
+      <dd>{{ member.id }}</dd>
       <dt>Email</dt>
-      <dd>{{ email }}</dd>
+      <dd>{{ member.email }}</dd>
       <dt>Points</dt>
-      <dd>
-        <input type="number" v-bind:value="points" v-on:input="onInput" />
-      </dd>
+      <dd><input type="number" v-model.number="member.points" /></dd>
       <dt>Note</dt>
       <dd>{{ localNote }}</dd>
     </dl>

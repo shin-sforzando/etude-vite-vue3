@@ -1,44 +1,25 @@
 <script setup lang="ts">
-  import { computed, ref } from 'vue'
-  import OneMember, { Member } from '@/components/OneMember.vue'
+  import { provide, reactive } from 'vue'
+  import BaseSection from '@/components/BaseSection.vue'
+  import { Member } from '@/interfaces'
 
-  const memberListInit = new Map<number, Member>()
-  memberListInit.set(1, {
+  const memberList = new Map<number, Member>()
+  memberList.set(1, {
     id: 1,
     name: 'John',
     email: 'john@example.com',
     points: 10,
-    note: 'Guest',
+    note: 'Special Guest',
   })
-  memberListInit.set(2, {
+  memberList.set(2, {
     id: 2,
     name: 'Jane',
     email: 'jane@example.com',
     points: 20,
   })
-  const memberList = ref(memberListInit)
-
-  const totalPoints = computed((): number => {
-    let total = 0
-    memberList.value.forEach((member) => {
-      total += member.points
-    })
-    return total
-  })
+  provide('memberList', reactive(memberList))
 </script>
 
 <template>
-  <section>
-    <h1>Member List</h1>
-    <h2>Total Points: {{ totalPoints }}</h2>
-    <OneMember
-      v-for="[id, member] in memberList"
-      v-bind:key="id"
-      v-bind:id="id"
-      v-bind:name="member.name"
-      v-bind:email="member.email"
-      v-model:points="member.points"
-      v-bind:note="member.note"
-    />
-  </section>
+  <BaseSection />
 </template>
