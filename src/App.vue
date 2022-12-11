@@ -1,35 +1,62 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { provide, reactive } from 'vue'
+  import { RouterView } from 'vue-router'
+  import type { Member } from '@/interfaces'
 
-  import MyInput from '@/components/MyInput.vue'
-  import MyRadio from '@/components/MyRadio.vue'
-  import MySelect from '@/components/MySelect.vue'
-
-  const currentComponent = ref(MyInput)
-  const componentsList = [
-    { name: 'MyInput', component: MyInput },
-    { name: 'MyRadio', component: MyRadio },
-    { name: 'MySelect', component: MySelect },
-  ]
-  const currentComponentName = ref('MyInput')
-  const componentsNameList: string[] = ['MyInput', 'MyRadio', 'MySelect']
-
-  let currentComponentIndex = 0
-
-  const switchComponent = (): void => {
-    currentComponentIndex++
-    if (componentsList.length <= currentComponentIndex) {
-      currentComponentIndex = 0
-    }
-    currentComponent.value = componentsList[currentComponentIndex].component
-    currentComponentName.value = componentsList[currentComponentIndex].name
-  }
+  const memberList = new Map<number, Member>()
+  memberList.set(1, {
+    id: 1,
+    name: 'John',
+    email: 'jojn@example.com',
+    points: 0,
+  })
+  memberList.set(2, {
+    id: 2,
+    name: 'Jane',
+    email: 'jane@example.com',
+    points: 0,
+    note: 'Special Guest',
+  })
+  provide('memberList', reactive(memberList))
 </script>
 
 <template>
-  <p>Current Component: {{ currentComponentName }}</p>
-  <KeepAlive>
-    <component :is="currentComponent" />
-  </KeepAlive>
-  <button @click="switchComponent">切り替え</button>
+  <header>
+    <h1>Sample of Vue Router</h1>
+  </header>
+  <main>
+    <RouterView />
+  </main>
 </template>
+
+<style>
+  main {
+    border: blue 1px solid;
+    padding: 10px;
+  }
+
+  #breadcrumbs {
+    margin-left: 0;
+  }
+
+  #breadcrumbs ul {
+    padding-left: 0;
+  }
+
+  #breadcrumbs ul .current {
+    color: red;
+  }
+
+  #breadcrumbs ul li::before {
+    content: ' > ';
+  }
+
+  #breadcrumbs ul li:first-child::before {
+    content: '';
+  }
+
+  #breadcrumbs ul li {
+    display: inline;
+    list-style-type: none;
+  }
+</style>
