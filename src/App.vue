@@ -48,7 +48,7 @@
   }
 
   #breadcrumbs ul li::before {
-    content: '>';
+    content: ' > ';
   }
 
   #breadcrumbs ul li:first-child::before {
