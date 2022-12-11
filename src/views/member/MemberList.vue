@@ -13,11 +13,12 @@
       <li>
         <RouterLink v-bind:to="{ name: 'AppTop' }">TOP</RouterLink>
       </li>
-      <li>会員管理</li>
+      <li class="current">会員管理</li>
     </ul>
   </nav>
   <section>
     <h2>会員リスト</h2>
+    <p><RouterLink v-bind:to="{ name: 'MemberAdd' }">新規登録</RouterLink></p>
     <section>
       <ul>
         <li v-for="[id, member] in memberList" v-bind:key="id">

@@ -24,6 +24,13 @@ const routes: RouteRecordRaw[] = [
       return { id: Number(routes.params.id) }
     },
   },
+  {
+    path: '/member/add',
+    name: 'MemberAdd',
+    component: async () => {
+      return await import('@/views/member/MemberAdd.vue')
+    },
+  },
 ]
 
 const router = createRouter({
