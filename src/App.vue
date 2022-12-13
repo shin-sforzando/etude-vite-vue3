@@ -1,33 +1,18 @@
 <script setup lang="ts">
-  import { provide, reactive } from 'vue'
-  import { RouterView } from 'vue-router'
-  import type { Member } from '@/interfaces'
+  import { computed } from 'vue'
+  import { useCounterStore } from '@/stores/counter'
 
-  const memberList = new Map<number, Member>()
-  memberList.set(1, {
-    id: 1,
-    name: 'John',
-    email: 'jojn@example.com',
-    points: 0,
-  })
-  memberList.set(2, {
-    id: 2,
-    name: 'Jane',
-    email: 'jane@example.com',
-    points: 0,
-    note: 'Special Guest',
-  })
+  const counterStore = useCounterStore()
 
-  provide('memberList', reactive(memberList))
+  const count = computed((): number => counterStore.counter)
+  const doubleCount = computed((): number => counterStore.doubleCounter)
+  const onIncrementalClick = () => counterStore.increment()
 </script>
 
 <template>
-  <header>
-    <h1>Sample of Vue Router</h1>
-  </header>
-  <main>
-    <RouterView />
-  </main>
+  <p>Current Point: {{ count }}</p>
+  <p>Double: {{ doubleCount }}</p>
+  <button v-on:click="onIncrementalClick">加算</button>
 </template>
 
 <style>
