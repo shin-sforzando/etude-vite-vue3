@@ -17,6 +17,7 @@
     points: 0,
     note: 'Special Guest',
   })
+
   provide('memberList', reactive(memberList))
 </script>
 
