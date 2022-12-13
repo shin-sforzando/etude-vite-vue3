@@ -4,15 +4,17 @@
 
   const counterStore = useCounterStore()
 
-  const count = computed((): number => counterStore.counter)
-  const doubleCount = computed((): number => counterStore.doubleCounter)
+  const counter = computed((): number => counterStore.counter)
+  const doubleCounter = computed((): number => counterStore.doubleCounter)
   const onIncrementalClick = () => counterStore.increment()
+  const onResetClick = () => counterStore.$reset()
 </script>
 
 <template>
-  <p>Current Point: {{ count }}</p>
-  <p>Double: {{ doubleCount }}</p>
+  <p>Current Point: {{ counter }}</p>
+  <p>Double: {{ doubleCounter }}</p>
   <button v-on:click="onIncrementalClick">加算</button>
+  <button v-on:click="onResetClick">リセット</button>
 </template>
 
 <style>
