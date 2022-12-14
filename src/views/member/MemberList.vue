@@ -1,9 +1,15 @@
 <script setup lang="ts">
-  import { inject } from 'vue'
+  import { computed } from 'vue'
   import { RouterLink } from 'vue-router'
   import type { Member } from '@/interfaces'
+  import { useMembersStore } from '@/stores/members'
 
-  const memberList = inject('memberList') as Map<number, Member>
+  const memberStore = useMembersStore()
+  memberStore.prepareMemberList()
+  const memberList = computed((): Map<number, Member> => memberStore.memberList)
+  const isMemberListEmpty = computed((): boolean => {
+    return memberStore.isMemberListEmpty
+  })
 </script>
 
 <template>
@@ -21,6 +27,7 @@
     <p><RouterLink v-bind:to="{ name: 'MemberAdd' }">新規登録</RouterLink></p>
     <section>
       <ul>
+        <li v-if="isMemberListEmpty">会員が存在しません。</li>
         <li v-for="[id, member] in memberList" v-bind:key="id">
           <RouterLink v-bind:to="{ name: 'MemberDetail', params: { id: id } }">
             {{ id }}: {{ member.name }}
