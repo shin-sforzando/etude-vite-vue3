@@ -1,14 +1,15 @@
 <script setup lang="ts">
-  import { computed, inject } from 'vue'
+  import { computed } from 'vue'
   import { RouterLink } from 'vue-router'
   import type { Member } from '@/interfaces'
+  import { useMembersStore } from '@/stores/members'
 
   const props = defineProps<{
     id: number
   }>()
 
-  const memberList = inject('memberList') as Map<number, Member>
-  const member = computed(() => memberList.get(props.id) as Member)
+  const memberStore = useMembersStore()
+  const member = computed((): Member => memberStore.getById(props.id))
   const localNote = computed(() => {
     let localNote = '--'
     if (member.value.note) {
