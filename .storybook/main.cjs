@@ -5,15 +5,21 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
   ],
-  framework: '@storybook/vue3',
-  core: {
-    builder: '@storybook/builder-vite',
-  },
-  features: {
-    storyStoreV7: true,
+  framework: {
+    name: '@storybook/vue3-vite',
+    options: {},
   },
   async viteFinal(config) {
     config.resolve.alias['@'] = `${__dirname}/../src`
-    return { ...config, build: { ...config.build, sourcemap: true } }
+    return {
+      ...config,
+      build: {
+        ...config.build,
+        sourcemap: true,
+      },
+    }
+  },
+  docs: {
+    autodocs: true,
   },
 }
