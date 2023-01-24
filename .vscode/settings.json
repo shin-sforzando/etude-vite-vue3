@@ -1,5 +1,12 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "cSpell.words": ["chromaui", "peaceiris", "pinia", "stylelint", "vite"]
+  "cSpell.words": [
+    "autodocs",
+    "chromaui",
+    "peaceiris",
+    "pinia",
+    "stylelint",
+    "vite"
+  ]
 }
