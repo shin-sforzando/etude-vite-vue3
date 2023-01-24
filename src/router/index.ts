@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 import AppTop from '@/views/AppTop.vue'
 
 const routes: RouteRecordRaw[] = [
@@ -33,9 +34,12 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
-})
+const router = (type: 'history' | 'memory' = 'history') => {
+  const history =
+    type === 'memory'
+      ? createMemoryHistory(import.meta.env.BASE_URL)
+      : createWebHistory(import.meta.env.BASE_URL)
+  return createRouter({ history, routes })
+}
 
 export default router

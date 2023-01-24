@@ -13,6 +13,6 @@ export const parameters = {
 }
 
 setup((app) => {
-  app.use(router)
+  app.use(router('memory'))
   app.use(createPinia())
 })
