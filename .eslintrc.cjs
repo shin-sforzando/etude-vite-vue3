@@ -28,7 +28,4 @@ module.exports = {
     'storybook-static/',
   ],
   overrides: [],
-  rules: {
-    'comma-dangle': ['error', 'always-multiline'],
-  },
 }

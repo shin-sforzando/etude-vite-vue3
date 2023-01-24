@@ -5,6 +5,7 @@
     "autodocs",
     "chromaui",
     "peaceiris",
+    "Persistedstate",
     "pinia",
     "stylelint",
     "vite"
