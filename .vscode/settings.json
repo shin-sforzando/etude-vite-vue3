@@ -9,5 +9,25 @@
     "pinia",
     "stylelint",
     "vite"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#1743b2",
+    "activityBar.background": "#1743b2",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#380715",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#1743b2",
+    "statusBar.background": "#113285",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#1743b2",
+    "statusBarItem.remoteBackground": "#113285",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#113285",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#11328599",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#113285"
 }

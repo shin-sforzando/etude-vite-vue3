@@ -24,7 +24,7 @@
 - [Prerequisites](#prerequisites)
 - [How to](#how-to)
   - [Setup](#setup)
-    - [Reveal secrets](#reveal-secrets)
+    - [Reveal Secrets](#reveal-secrets)
     - [Environment Variables](#environment-variables)
   - [Develop](#develop)
   - [Document](#document)
@@ -83,7 +83,7 @@ available via `npm run-script`:
 
 ### Setup
 
-#### Reveal secrets
+#### Reveal Secrets
 
 To reveal secret files, `npm run reveal`.
 
